@@ -23,7 +23,7 @@ def input_error(function):
             return "You entered invalid numbers of arguments for this command."
     return inner
 
-#Опис функції,яка зберігає у пам'яті (у словнику наприклад) новий контакт
+#Опис функції,яка зберігає у пам'яті новий контакт
 @input_error
 def add_contact(name, phone):
     contacts[name] = phone
