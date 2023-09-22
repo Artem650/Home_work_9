@@ -8,7 +8,8 @@ def parse(user_input):
     args = user_input_list[1:]
     return (command, args)
 
-#Опис функції, що обробляє винятки
+# Опис функції помилок введення користувача повинні оброблятися за допомогою декоратора input_error
+# Обробляє винятки, що виникають у функціях-handler (KeyError, ValueError, IndexError)
 def input_error(function):
     def inner(*args):
         try:
@@ -78,7 +79,7 @@ def main():
             if command in handler_commands.keys():
                 print(handler_commands[command](*args))
             else:
-                print("You entered an invalid command, please enter one of the next commands: "
+                print("You enter an invalid command, please enter one of the next commands: "
                     "'hello', 'show all', 'add', 'change', 'phone', '.', 'close', 'exit', 'good bye'")
 
 
